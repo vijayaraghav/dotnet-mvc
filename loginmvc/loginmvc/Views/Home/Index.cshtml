@@ -1,0 +1,80 @@
+﻿@model loginmvc.Models.User
+
+@{
+    ViewBag.Title = "Index";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>INDEX</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        .txt-col{
+            color:#FF0000;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h2>HomePage</h2>
+    @*<form method="post" enctype="multipart/form-data">
+        <div>
+            <input type="text" name="Email" />
+        </div>
+        <div>
+            <input type="file" name="postedFile" multiple />
+        </div>
+        <div class="form-group">
+            <div>
+                <button class="btn btn-primary" name="button" value="login" formaction="/Home/upload" formmethod="post" style="background-color:#5cb85c;width:80px">upload</button>
+                <input type="submit" name="button" value="Submit" formaction="/Home/upload" formmethod="post" style="background-color:#5cb85c;width:80px" />
+            </div>
+        </div>
+    </form>
+    <div class="container">
+        <h2>files</h2>
+        <p>click the below link  to download file</p>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th class="txt-col">
+                        userId
+                    </th>
+                    <th class="txt-col">file1</th>
+                    <th class="txt-col">file2</th>
+                    <th class="txt-col">file3</th>
+                </tr>
+            </thead>
+            @foreach(var file in ViewBag.filelist){
+            <tr>
+                <td>
+                   @file.UserId
+                </td>
+                <td>
+                    <a href="@Url.Action("download","Home",new { id = file.UserId, val = "1" })">file1
+                    </a>
+                </td>
+                <td>
+                    <a href="@Url.Action("download","Home",new { id = file.UserId, val = "2" })">
+                        file3
+                    </a>
+                </td>
+                <td>
+                    <a href="@Url.Action("download","Home",new { id = file.UserId, val = "3" })">
+                        file2
+                    </a>
+                    
+                </td>
+            </tr>
+          }
+
+            
+
+        </table>
+
+    </div>*@
+
+</body>
+
+</html>

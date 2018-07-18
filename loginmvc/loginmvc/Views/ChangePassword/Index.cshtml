@@ -1,0 +1,92 @@
+﻿@model loginmvc.Models.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+
+<body>
+    <center>
+
+
+        <div style="margin-top:150px">
+            @using (Html.BeginForm("changePasswordMethod", "ChangePassword", FormMethod.Post))
+            {
+
+                <table>
+                    <tr>
+                        <td style="text-decoration:underline">
+                            Change password
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>New password</label>
+                        </td>
+                        <td>
+                            @Html.PasswordFor(model => model.Password)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>@Html.ValidationMessageFor(model => model.Password)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Confirm password</label>
+                        </td>
+                        <td>
+
+                            @Html.PasswordFor(model => model.confirmPassword)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>@Html.ValidationMessageFor(model => model.confirmPassword)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>otp </label>
+                        </td>
+                        <td>
+
+                            @Html.EditorFor(model => model.otp)
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>@Html.ValidationMessageFor(model => model.otp)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            @Html.HiddenFor(model => model.Password)
+                        </td>
+                        <td>
+                            <button type="submit" value="changePassword"> Change Password</button>
+                        </td>
+                    </tr>
+                </table>
+            }
+
+        </div>
+    </center>
+
+    @if(ViewBag.Message != null && Session["valid"] == "true")
+    {
+        <script type="text/javascript">
+
+            window.onload = function()
+            {
+                alert("@ViewBag.Message");
+            }
+        </script>
+    }
+</body>
+</html>

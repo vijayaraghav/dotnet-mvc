@@ -1,0 +1,42 @@
+﻿@model loginmvc.Models.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ForgotPassword</title>
+</head>
+<body>
+    <div id="for-div"> 
+        @using (Html.BeginForm("generateOTP", "ForgetPassword", FormMethod.Post))
+        {       
+        <table>
+            <tr>
+                <td style="text-decoration:underline">
+                    Forgot password
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Email)
+                </td>
+                <td>
+                    @Html.EditorFor(model => model.Email)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" value="generate otp" > generate otp</button>
+                </td>
+            </tr>
+
+            
+        </table>
+        }
+    </div>
+</body>
+</html>
